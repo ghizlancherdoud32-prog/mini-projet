@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des tâches</title>
+</head>
+<body>
+    <h1>Gestion des tâches</h1>
+
+    <label for="task">Nouvelle tâche :</label>
+    <input type="text" id="task" placeholder="Écrire une tâche">
+
+    <button type="button" onclick="ajouterTache()">Ajouter</button>
+
+    <h2>Ma liste de tâches</h2>
+    <ul id="liste"></ul>
+
+    <script>
+        function ajouterTache() {
+            const champ = document.getElementById("task");
+            const texte = champ.value.trim();
+
+            if (texte !== "") {
+                const tache = document.createElement("li");
+                tache.textContent = texte;
+                document.getElementById("liste").appendChild(tache);
+                champ.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
